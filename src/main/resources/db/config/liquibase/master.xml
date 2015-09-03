@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<include file="classpath:db/config/liquibase/changelog/_initial_schema.xml" relativeToChangelogFile="false" />
+	
+	<include file="classpath:db/config/liquibase/changelog/authority.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/user.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/user_authority.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/client.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/project.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/mission_type.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/function.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/function_type.xml" relativeToChangelogFile="false" />
+	<include file="classpath:db/config/liquibase/changelog/mission.xml" relativeToChangelogFile="false" />
+</databaseChangeLog>

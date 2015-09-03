@@ -1,0 +1,45 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+   <h1>Registration</h1>
+   <div class="alert alert-success" ng-show="registerController.SUCCESS_STATUS" translate="ACCOUNT_REGISTER_SUCCESS_STATUS_MSG" />
+   <div class="alert alert-danger" ng-show="registerController.ERROR_STATUS" translate="ACCOUNT_REGISTER_ERROR_STATUS_MSG" />
+   <div class="alert alert-danger" ng-show="registerController.DO_NOT_MATCH_STATUS" translate="ACCOUNT_REGISTER_PASSWORD_DO_NOT_MATCH_STATUS_MSG" />
+   <div class="alert alert-danger" ng-show="registerController.ALREADY_USED_LOGIN_STATUS" translate="ACCOUNT_REGISTER_ALREADY_USED_LOGIN_STATUS_MSG" />
+   <div class="alert alert-danger" ng-show="registerController.ALREADY_USED_EMAIL_STATUS" translate="ACCOUNT_REGISTER_ALREADY_USED_EMAIL_STATUS_MSG" />
+   <form name="form" ng-submit="registerController.register()" ng-show="!registerController.SUCCESS_STATUS" novalidate show-validation>
+    <div class="form-group">
+     <label>Login</label>
+     <input type="text" class="form-control" name="login" placeholder="Your login" ng-model="registerController.account.login" ng-minlength=1 ng-maxlength=50
+      ng-pattern="/^[a-z0-9]*$/" required>
+    </div>
+    <div class="form-group">
+     <label>E-mail</label>
+     <input type="email" class="form-control" name="email" placeholder="Your e-mail" ng-model="registerController.account.email" ng-minlength=5 ng-maxlength=100 required>
+    </div>
+    <div class="form-group">
+     <label>New password</label>
+     <input type="password" class="form-control" name="password" placeholder="New password" ng-model="registerController.account.password" ng-minlength=5 ng-maxlength=50 required>
+    </div>
+    <div class="form-group">
+     <label>New password confirmation</label>
+     <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm the new password" ng-model="registerController.confirmPassword" ng-minlength=5
+      ng-maxlength=50 required>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Register</button>
+   </form>
+   <p></p>
+   <div class="alert alert-warning">
+    If you want to
+    <a class="alert-link" href="#/account/login">authenticate</a>
+    , you can try the default accounts:
+    <br />
+    - Administrator (login="admin" and password="admin1")
+    <br />
+    - Manager (login="manager" and password="manager1")
+    <br />
+    - User (login="user" and password="user1").
+   </div>
+  </div>
+ </div>
+ <div ng-cloak>

@@ -1,0 +1,74 @@
+body {
+	background: #eeeeee;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak,
+	.x-ng-cloak {
+	display: none !important;
+}
+
+div#logo img {
+	float: left;
+}
+
+div#logo  a {
+	margin-left: -160px;
+}
+
+.navbar-version {
+	font-size: 10px;
+	color: #7a7a7a;
+	font-weight: bold;
+}
+
+.error {
+	color: white;
+	background-color: red;
+}
+
+.container>.well {
+	background-color: #ffffff;
+}
+
+.navbar-inverse {
+	background-color: #eeeeee;
+	border-color: #eeeeee;
+}
+
+.container>.footer {
+	text-align: center;
+}
+
+div.ui-select-container {
+	width: 100%;
+}
+
+.row .customWell {
+	padding-top: 0px; 
+	padding-bottom: 0px;
+	border-radius: 25px;
+    height: 150px; 
+}
+
+.right-add-button {
+	line-height: 150px;
+	font-size: 40px;
+}
+
+.vcenter {
+	vertical-align: middle;
+}
+
+.left-user-profile-logo{
+	line-height: 150px;
+	float:left;	
+}
+
+.text-info-profile{
+	color:	#9b9c9e;
+	font-size: 20px;
+	float:left;
+	margin-top: 30px;
+}

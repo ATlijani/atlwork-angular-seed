@@ -1,0 +1,95 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-12">
+   <div ng-show="userMissionController.missions.length" ng-controller="UserMissionController as userMissionController">
+    <form class="form">
+     <accordion close-others="false"> <accordion-group is-open="status.open"
+      ng-repeat="mission in userMissionController.missions  | orderObjectBy:'title':false track by $index"> <accordion-heading>
+     <button class="btn btn-info" style="min-width: 400px;">
+      {{mission.title | uppercase}}
+      <i class=" glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+     </button>
+     <div class="pull-right">
+      <a class="btn btn-success" title="Pdf Export" href="api/mission-report/{{mission.id}}" ng-click="$event.stopPropagation()">
+       <i class="glyphicon glyphicon-download"></i>
+      </a>
+      <button class="btn btn-danger" title="Delete" ng-click="confirmClick($event) && userMissionController.deleteMission(mission)" confirm-click-directive>
+       <i class="glyphicon glyphicon-trash glyphicon-white"></i>
+      </button>
+      <a class="btn btn-info" title="Edit" ui-sref="site.home.user.mission.edit({mission:mission})" ng-click="$event.stopPropagation()">
+       <i class="glyphicon glyphicon-edit glyphicon-white"></i>
+      </a>
+     </div>
+     </accordion-heading>
+     <div class="panel panel-default">
+      <div class="panel-body">
+       <div class="row">
+        <div class="col-sm-4">
+         <h4 class="title">Client</h4>
+         <p>{{mission.client.account}}</p>
+        </div>
+        <div class="col-sm-4">
+         <h4 class="title">Project</h4>
+         <p>{{mission.project.name}}</p>
+        </div>
+        <div class="col-sm-4">
+         <h4 class="title">Function</h4>
+         <p>{{mission.function.name}}</p>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-sm-4">
+         <h4 class="title">Function Type</h4>
+         <p>{{mission.functionType.name}}</p>
+        </div>
+        <div class="col-sm-4">
+         <h4 class="title">Mission Type</h4>
+         <p>{{mission.missionType.name}}</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <table class="table">
+      <tr>
+       <td class="col-md-3">
+        <h5>Technical Skills :</h5>
+       </td>
+       <td>{{mission.technicalSkills}}</td>
+      </tr>
+      <tr>
+       <td>
+        <h5>Functional Skills :</h5>
+       </td>
+       <td>{{mission.functionalSkills}}</td>
+      </tr>
+      <tr>
+       <td>
+        <h5>Context :</h5>
+       </td>
+       <td>{{mission.context}}</td>
+      </tr>
+      <tr>
+       <td>
+        <h5>Approche :</h5>
+       </td>
+       <td>{{mission.approche}}</td>
+      </tr>
+      <tr>
+       <td>
+        <h5>Methodology :</h5>
+       </td>
+       <td>{{mission.methodology}}</td>
+      </tr>
+      <tr>
+       <td>
+        <h5>Benefits :</h5>
+       </td>
+       <td>{{mission.benefits}}</td>
+      </tr>
+     </table>
+     </accordion-group> </accordion>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>

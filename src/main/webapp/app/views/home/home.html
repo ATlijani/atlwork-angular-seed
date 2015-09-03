@@ -1,0 +1,23 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-12">
+   <div ng-controller="HomeController as homeController" class="well customWell">
+    <div class="left-user-profile-logo">
+     <img ng-src="assets/images/profile.png" alt="logo" />
+    </div>
+     <div class="vcenter text-info-profile">
+      <p style="margin-bottom: 0px;">{{homeController.account.firstName}} {{homeController.account.lastName}}</p>
+      <p>{{homeController.account.email}}</p>
+     </div>
+    
+    
+    <div class="pull-right right-add-button">
+     <a class="vcenter" ui-sref="site.home.user.mission.add" title="Add New Mission" ng-show="$state.includes('site.home.user')&&!$state.includes('site.home.user.mission.add')">
+      <span class="glyphicon glyphicon-plus-sign" style="color: #449d44" />
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div ui-view="detail"></div>
+</div>

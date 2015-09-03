@@ -1,0 +1,34 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+   <h1>Reset password</h1>
+   <div class="alert alert-warning" ng-hide="resetFinishController.SUCCESS_STATUS || resetFinishController.KEY_MISSING_STATUS">
+    <p>Choose a new password</p>
+   </div>
+   <div class="alert alert-success" ng-show="resetFinishController.SUCCESS_STATUS">
+    <p translate="ACCOUNT_RESET_FINISH_SUCCESS_STATUS_MSG" />
+   </div>
+   <div class="alert alert-danger" ng-show="resetFinishController.ERROR_STATUS">
+    <p translate="ACCOUNT_RESET_FINISH_ERROR_STATUS_MSG" />
+   </div>
+   <div class="alert alert-danger" ng-show="resetFinishController.KEY_MISSING_STATUS" translate="ACCOUNT_RESET_FINISH_KEYMISSING_MSG" />
+   <div class="alert alert-danger" ng-show="resetFinishController.INCORRECT_PASSWORD_STATUS" translate="ACCOUNT_RESET_FINISH_INCORRECT_PASSWORD_STATUS_MSG" />
+   <div class="alert alert-danger" ng-show="resetFinishController.DO_NOT_MATCH_STATUS" translate="ACCOUNT_RESET_FINISH_PASSWORD_DO_NOT_MATCH_STATUS_MSG" />
+   <form name="form" ng-show="!resetFinishController.SUCCESS_STATUS&&!resetFinishController.KEY_MISSING_STATUS" novalidate ng-submit="resetFinishController.finishReset()"
+    show-validation>
+    <div class="form-group">
+     <label>New password</label>
+     <input type="password" class="form-control" name="password" placeholder="New password" ng-model="resetFinishController.resetAccount.password" ng-minlength=5 ng-maxlength=50
+      required>
+     <password-strength-bar password-to-check="resetAccount.password" />
+    </div>
+    <div class="form-group">
+     <label>New password confirmation</label>
+     <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm the new password" ng-model="resetFinishController.confirmPassword" ng-minlength=5
+      ng-maxlength=50 required>
+    </div>
+    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Validate new password</button>
+   </form>
+  </div>
+ </div>
+</div>

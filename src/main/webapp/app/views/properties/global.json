@@ -1,0 +1,47 @@
+{
+"FOOTER_MSG": "Copyright © 2015 - All Rights Reserved - INVIVOO",
+"HOME_TITLE_MSG":"fiche projet <small>missions management</small>",
+
+"ACCESSDENIED_403_MSG": "You are not authorized to access the page.",
+
+"ACCOUNT_ACTIVATE_ERROR_STATUS_MSG":"<strong>Your user could not be activated.</strong> Please use the registration form to sign up.",
+"ACCOUNT_ACTIVATE_SUCCESS_STATUS_MSG":"<strong>Your user has been activated.</strong> Please <a href=\"#/account/login\">authenticate</a>.",
+
+"ACCOUNT_LOGIN_ERROR_STATUS_MSG": "<strong>Authentication failed!</strong> Please check your credentials and try again.",
+
+"ACCOUNT_PASSWORD_ERROR_STATUS_MSG":  "<strong>An error has occurred!</strong> The password could not be changed.",
+"ACCOUNT_PASSWORD_SUCCESS_STATUS_MSG": "<strong>Password changed!</strong>",
+"ACCOUNT_PASSWORD_DO_NOT_MATCH_STATUS_MSG": "The password and its confirmation do not match!",
+"ACCOUNT_PASSWORD_INCORRECT_PASSWORD_STATUS_MSG": "Your password is required to be at least 5 characters and cannot be longer than 100 characters.",
+
+"ACCOUNT_PASSWORD_TITLE_MSG": "Password for [<b>{{username}}</b>]",
+
+"ACCOUNT_REGISTER_ERROR_STATUS_MSG": "<strong>Registration failed!</strong> Please try again later.",
+"ACCOUNT_REGISTER_SUCCESS_STATUS_MSG": "<strong>Registration saved!</strong> Please check your email for confirmation.",
+"ACCOUNT_REGISTER_PASSWORD_DO_NOT_MATCH_STATUS_MSG": "The password and its confirmation do not match!",
+"ACCOUNT_REGISTER_ALREADY_USED_EMAIL_STATUS_MSG": "<strong>E-mail is already in use!</strong> Please choose another one.",
+"ACCOUNT_REGISTER_ALREADY_USED_LOGIN_STATUS_MSG": "<strong>Login name already registered!</strong> Please choose another one.",
+
+"ACCOUNT_RESET_FINISH_ERROR_STATUS_MSG": "Your password couldn't be reset. Remember a password request is only valid for 24 hours.",
+"ACCOUNT_RESET_FINISH_SUCCESS_STATUS_MSG": "Password changed",
+"ACCOUNT_RESET_FINISH_KEYMISSING_MSG": "The reset key is missing.",
+"ACCOUNT_PASSWORD_DO_NOT_MATCH_CURRENT_STATUS_MSG": "Current password is wrong",
+"ACCOUNT_RESET_FINISH_PASSWORD_DO_NOT_MATCH_STATUS_MSG": "The password and its confirmation do not match!",
+"ACCOUNT_RESET_FINISH_INCORRECT_PASSWORD_STATUS_MSG":"tobe",
+
+"ACCOUNT_RESET_REQUEST_SUCCESS_STATUS_MSG": "Check your e-mails for details on how to reset your password.",
+"ACCOUNT_RESET_REQUEST_EMAIL_NOT_REGISTERED_STATUS_MSG": "<strong>E-Mail address isn't registered!</strong> Please check and try again",
+"ACCOUNT_RESET_REQUEST_USER_NOT_ACTIVATED_STATUS_MSG": "<strong>User not Activated !</strong> Please check and try again",
+
+"ACCOUNT_SETTINGS_ERROR_STATUS_MSG": "<strong>An error has occurred!</strong> Settings could not be saved.",
+"ACCOUNT_SETTINGS_SUCCESS_STATUS_MSG": "<strong>Settings saved!</strong>",
+"ACCOUNT_SETTINGS_ALREADY_USED_EMAIL_STATUS_MSG": "<strong>E-mail is already in use!</strong> Please choose another one.",
+
+"ACCOUNT_SETTINGS_TITLE_MSG": "User settings for [<b>{{username}}</b>]",
+
+"MISSION_ADD_ERROR_STATUS_MSG":"Validation failed",
+"MISSION_ADD_UNIQUE_CONSTRAINT_VIOLATION_STATUS_MSG":"Failed to create, mission already exists",
+"MISSION_EDIT_ERROR_STATUS_MSG":"Validation failed",
+"MISSION_EDIT_UNIQUE_CONSTRAINT_VIOLATION_STATUS_MSG":"Failed to update, mission already exists"
+
+}

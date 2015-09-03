@@ -1,0 +1,110 @@
+<div ng-cloak>
+ <div class="well">
+  <form name="form" class="form-horizontal" novalidate show-validation>
+   <fieldset>
+    <legend>Add New Mission</legend>
+    <div class="alert alert-danger" ng-show="userMissionCreateController.ERROR_STATUS" translate="MISSION_ADD_ERROR_STATUS_MSG" />
+    <div class="alert alert-danger" ng-show="userMissionCreateController.UNIQUE_CONSTRAINT_VIOLATION_STATUS" translate="MISSION_ADD_UNIQUE_CONSTRAINT_VIOLATION_STATUS_MSG" />
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <input type="text" placeholder="Title" class="form-control" ng-model="userMissionCreateController.mission.title" required />
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <ui-select theme="select2" ng-model="userMissionCreateController.mission.client"> <ui-select-match placeholder="- Client -">{{$select.selected.account}}</ui-select-match>
+      <ui-select-choices repeat="item in userMissionCreateController.clients | filter: $select.search">
+      <div ng-bind-html="item.account | highlight: $select.search"></div>
+      </ui-select-choices> </ui-select>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <ui-select theme="select2" ng-model="userMissionCreateController.mission.project"> <ui-select-match placeholder="- Project -">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="item in userMissionCreateController.projects | filter: $select.search">
+      <div ng-bind-html="item.name | highlight: $select.search"></div>
+      </ui-select-choices> </ui-select>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <ui-select theme="select2" ng-model="userMissionCreateController.mission.function"> <ui-select-match placeholder="- Function -">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="item in userMissionCreateController.functions | filter: $select.search">
+      <div ng-bind-html="item.name | highlight: $select.search"></div>
+      </ui-select-choices> </ui-select>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <ui-select theme="select2" ng-model="userMissionCreateController.mission.functionType"> <ui-select-match placeholder="- Function Type -">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="item in userMissionCreateController.functionTypes | filter: $select.search">
+      <div ng-bind-html="item.name | highlight: $select.search"></div>
+      </ui-select-choices> </ui-select>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-6">
+      <ui-select theme="select2" ng-model="userMissionCreateController.mission.missionType"> <ui-select-match placeholder="- Mission Type -">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="item in userMissionCreateController.missionTypes | filter: $select.search">
+      <div ng-bind-html="item.name | highlight: $select.search"></div>
+      </ui-select-choices> </ui-select>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="Technical Skills" rows="3" class="form-control" ng-model="userMissionCreateController.mission.technicalSkills" />
+      <span class="help-block">Describe Technical Skills</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="FunctionalSkills" rows="3" class="form-control" ng-model="userMissionCreateController.mission.functionalSkills" />
+      <span class="help-block">Describe Functional Skills</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="Context" rows="3" class="form-control" ng-model="userMissionCreateController.mission.context" />
+      <span class="help-block">Describe Contexte</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="Approche" rows="3" class="form-control" ng-model="userMissionCreateController.mission.approche" />
+      <span class="help-block">Describe Approache</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="Methodoloy" rows="3" class="form-control" ng-model="userMissionCreateController.mission.methodology" />
+      <span class="help-block">Describe Methodology</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="col-lg-1" />
+     <div class="col-lg-10">
+      <textarea placeholder="Benefits" rows="3" class="form-control" ng-model="userMissionCreateController.mission.benefits" />
+      <span class="help-block">Report Benefits</span>
+     </div>
+    </div>
+    <div class="form-group">
+     <div class="col-lg-10 col-lg-offset-2">
+      <button class="btn btn-success" type="submit" ng-click="userMissionCreateController.addMission(userMissionCreateController.mission)" ng-disabled="form.$invalid">Submit</button>
+      <a ui-sref="site.home.user" class="btn btn-warning">Cancel</a>
+     </div>
+    </div>
+   </fieldset>
+  </form>
+ </div>
+</div>

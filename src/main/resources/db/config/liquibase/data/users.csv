@@ -1,0 +1,5 @@
+ID;LOGIN;PASSWORD;FIRST_NAME;LAST_NAME;EMAIL;ACTIVATED
+1;anonymousUser;$2a$10$j8S5d7Sr7.8VTOYNviDPOeWX8KcYILUVJBsYV83Y5NtECayypx9lO;Anonymous;User;anonymous@localhost;true
+2;admin;$2a$10$fHvvwiMK8NtCbUdj/100z.CStc8dD8Ni4qqS5lxScR.tpkqxKARI2;Administrator;Administrator;admin@localhost;true
+3;manager;$2a$10$nmRt/rUKPvWnwY.KQSVYUO36xYi82dZDfiQ.xhCSVvO430hBH8xZ2;Manager;Manager;manager@localhost;true
+4;user;$2a$10$AWIODXlCYD5FJl.v7Ag56uLSw6f1bjnxYwjI/3KZe70si8aGzHcRa;User;User;user@localhost;true

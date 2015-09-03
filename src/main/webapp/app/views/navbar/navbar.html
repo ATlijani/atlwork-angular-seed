@@ -1,0 +1,85 @@
+<nav class="navbar">
+  <div class="container">
+    <div id="logo" class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" />
+        <span class="icon-bar" />
+        <span class="icon-bar" />
+      </button>
+      <img ng-src="assets/images/logo.png" alt="logo" />
+      <a class="navbar-brand" href="#/">
+        <span>fiche projet</span>
+        <span class="navbar-version">v{{APP_VERSION}}</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
+      <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active">
+          <a ui-sref="site.welcome">
+            <span class="glyphicon glyphicon-home" />
+            <span>Home</span>
+          </a>
+        </li>
+        <li ng-class="{active: $state.includes('admin')}" ng-switch-when="true" has-role-directive="ROLE_ADMIN" class="dropdown pointer">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">
+            <span>
+              <span class="glyphicon glyphicon-tower" />
+              <span class="hidden-tablet">Administration</span>
+              <b class="caret" />
+            </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-show="{{APP_ENV === 'dev'}}">
+              <a href='/fiche-projet/console' target="_tab">
+                <span class="glyphicon glyphicon-hdd" />
+                <span>Database</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">
+            <span>
+              <span class="glyphicon glyphicon-user" />
+              <span class="hidden-tablet">Account</span>
+              <b class="caret" />
+            </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li ui-sref-active="active" ng-switch-when="true">
+              <a ui-sref="site.account.settings">
+                <span class="glyphicon glyphicon-wrench" />
+                <span>Settings</span>
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-switch-when="true">
+              <a ui-sref="site.account.password">
+                <span class="glyphicon glyphicon-lock" />
+                <span>Password</span>
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-switch-when="true">
+              <a href="" ng-click="logout()">
+                <span class="glyphicon glyphicon-log-out" />
+                <span>Log out</span>
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-switch-when="false">
+              <a ui-sref="site.account.login">
+                <span class="glyphicon glyphicon-log-in" />
+                <span>Authenticate</span>
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-switch-when="false">
+              <a ui-sref="site.account.register">
+                <span class="glyphicon glyphicon-plus-sign" />
+                <span>Register</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+>
+
+
+	<changeSet id="00000000000001" author="ficheprojet">
+
+		<createTable tableName="T_USER_AUTHORITY">
+			<column name="USER_ID" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="AUTHORITY_ID" type="bigint">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey columnNames="USER_ID, AUTHORITY_ID" tableName="T_USER_AUTHORITY" />
+		<addForeignKeyConstraint baseColumnNames="AUTHORITY_ID" baseTableName="T_USER_AUTHORITY" constraintName="FK_UA_AUTHORITY_NAME" referencedColumnNames="ID" referencedTableName="T_AUTHORITY" />
+		<addForeignKeyConstraint baseColumnNames="USER_ID" baseTableName="T_USER_AUTHORITY" constraintName="FK_UA_USER_ID" referencedColumnNames="ID" referencedTableName="T_USER" />
+
+		<dropDefaultValue tableName="T_USER" columnName="CREATED_DATE" columnDataType="datetime" />
+
+		<loadData encoding="UTF-8" file="db/config/liquibase/data/users_authorities.csv" separator=";" tableName="T_USER_AUTHORITY" />
+
+	</changeSet>
+</databaseChangeLog>

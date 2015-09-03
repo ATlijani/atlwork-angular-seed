@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Angular Seed</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+<!-- endbower -->
+<!-- build:css assets/styles/main.css -->
+<link rel="stylesheet" href="assets/styles/main.css" />
+</head>
+<body ng-app="angularSeedApp">
+ <div ui-view="navbar" ng-cloak=""></div>
+ <div class="container">
+  <div class="well" ui-view="content"></div>
+  <div class="footer">
+   <p translate="FOOTER_MSG">This is your footer</p>
+  </div>
+ </div>
+ <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>-->
+ <!-- bower:js -->
+ <script src="bower_components/jquery/dist/jquery.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+ <script src="bower_components/json3/lib/json3.js"></script>
+ <script src="bower_components/angular/angular.js"></script>
+ <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+ <script src="bower_components/angular-resource/angular-resource.js"></script>
+ <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+ <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+ <script src="bower_components/angular-translate/angular-translate.js"></script>
+ <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+ <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+ <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+ <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+ <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+ <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+ <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+ <script src="bower_components/angular-auto-validate/dist/jcs-auto-validate.js"></script>
+ <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+ <!-- endbower -->
+
+ <script src="app/app.run.js"></script>
+
+ <script src="app/app.config.js"></script>
+ <script src="app/app.constants.js"></script>
+ <script src="app/app.translate.config.js"></script>
+ <script src="app/directives/hasRoleDirective.js"></script>
+ <script src="app/directives/confirmClickDirective.js"></script>
+ <script src="app/directives/searchbox/angular-advanced-searchbox.js"></script>
+ <link rel="stylesheet" href="app/directives/searchbox/angular-advanced-searchbox.css" />
+
+ <script src="app/filter/propsFilter.js"></script>
+ <script src="app/filter/orderObjectBy.js"></script>
+ <script src="app/interceptors/AuthExpiredInterceptor.js"></script>
+
+ <script src="app/controllers/ActivationController.js"></script>
+ <script src="app/controllers/AdminHomeController.js"></script>
+ <script src="app/controllers/HomeController.js"></script>
+ <script src="app/controllers/LoginController.js"></script>
+ <script src="app/controllers/ManagerHomeController.js"></script>
+ <script src="app/controllers/NavbarController.js"></script>
+ <script src="app/controllers/PasswordController.js"></script>
+ <script src="app/controllers/RegisterController.js"></script>
+ <script src="app/controllers/RequestResetController.js"></script>
+ <script src="app/controllers/ResetFinishController.js"></script>
+ <script src="app/controllers/SettingsController.js"></script>
+ <script src="app/controllers/UserHomeController.js"></script>
+ <script src="app/controllers/UserMissionController.js"></script>
+ <script src="app/controllers/UserMissionCreateController.js"></script>
+ <script src="app/controllers/UserMissionEditController.js"></script>
+
+ <script src="app/services/AccountService.js"></script>
+ <script src="app/services/ActivateService.js"></script>
+ <script src="app/services/AuthorizationService.js"></script>
+ <script src="app/services/LoginService.js"></script>
+ <script src="app/services/PasswordService.js"></script>
+ <script src="app/services/PrincipalService.js"></script>
+ <script src="app/services/RegisterService.js"></script>
+ <script src="app/services/ClientService.js"></script>
+ <script src="app/services/ProjectService.js"></script>
+ <script src="app/services/MissionService.js"></script>
+ <script src="app/services/MissionPdfService.js"></script>
+ <script src="app/services/MissionTypeService.js"></script>
+ <script src="app/services/FunctionService.js"></script>
+ <script src="app/services/FunctionTypeService.js"></script>
+
+ <script src="app/states/account/app.state.account.config.js"></script>
+ <script src="app/states/admin/app.state.admin.config.js"></script>
+ <script src="app/states/app.state.global.config.js"></script>
+ <script src="app/states/manager/app.state.manager.config.js"></script>
+ <script src="app/states/user/app.state.user.config.js"></script>
+</body>
+</html>

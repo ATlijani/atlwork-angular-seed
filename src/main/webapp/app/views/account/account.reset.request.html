@@ -1,0 +1,22 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+   <h1>Reset your password</h1>
+   <div class="alert alert-success" ng-show="requestResetController.SUCCESS_STATUS == 'OK'">
+    <p translate="ACCOUNT_RESET_REQUEST_SUCCESS_STATUS_MSG" />
+   </div>
+   <div class="alert alert-warning" ng-hide="requestResetController.SUCCESS_STATUS">
+    <p>Enter the e-mail address you used to register</p>
+   </div>
+   <div class="alert alert-danger" translate="ACCOUNT_RESET_REQUEST_EMAIL_NOT_REGISTERED_STATUS_MSG" ng-show="requestResetController.EMAIL_NOT_REGISTERED_STATUS" />
+   <div class="alert alert-danger" translate="ACCOUNT_RESET_REQUEST_USER_NOT_ACTIVATED_STATUS_MSG" ng-show="requestResetController.USER_NOT_ACTIVATED_STATUS" />
+   <form name="form" ng-submit="requestResetController.requestReset()" ng-show="!requestResetController.SUCCESS_STATUS" novalidate show-validation>
+    <div class="form-group">
+     <label>E-mail</label>
+     <input type="email" class="form-control" name="email" placeholder="Your e-mail" ng-model="requestResetController.resetAccount.email" ng-minlength=5 ng-maxlength=100 required>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Reset password</button>
+   </form>
+  </div>
+ </div>
+</div>

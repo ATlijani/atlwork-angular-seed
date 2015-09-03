@@ -1,0 +1,27 @@
+<div ng-cloak>
+ <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+   <h1>Authentication</h1>
+   <div class="alert alert-danger" ng-show="loginController.ERROR_STATUS" translate="ACCOUNT_LOGIN_ERROR_STATUS_MSG" />
+   <form name="form" class="form" ng-submit="loginController.login($event)">
+    <div class="form-group">
+     <label for="username">Login</label>
+     <input type="text" class="form-control" id="username" placeholder="Your login" ng-model="loginController.username" required>
+    </div>
+    <div class="form-group">
+     <label for="password">Password</label>
+     <input type="password" class="form-control" id="password" placeholder="Your password" ng-model="loginController.password" required>
+    </div>
+    <button type="submit" class="btn btn-success" ng-disabled="form.$invalid">Authenticate</button>
+   </form>
+   <p />
+   <div class="alert alert-warning">
+    <a href="#/account/reset/request">Did you forget your password?</a>
+   </div>
+   <div class="alert alert-warning">
+    You don't have an account yet?
+    <a class="alert-link" href="#/account/register">Register a new account</a>
+   </div>
+  </div>
+ </div>
+</div>

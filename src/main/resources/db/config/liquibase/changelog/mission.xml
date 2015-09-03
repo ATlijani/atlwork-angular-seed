@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+>
+
+	<changeSet id="00000000000001" author="ficheprojet">
+
+		<createTable tableName="T_MISSION">
+			<column name="ID" type="bigint" autoIncrement="${autoIncrement}">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="USER_ID" type="bigint" />
+			<column name="CLIENT_ID" type="bigint" />
+			<column name="PROJECT_ID" type="bigint" />
+			<column name="FUNCTION_ID" type="bigint" />
+			<column name="FUNCTION_TYPE_ID" type="bigint" />
+			<column name="MISSION_TYPE_ID" type="bigint" />
+
+			<column name="TITLE" type="varchar(256)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TECHNICAL_SKILLS" type="longtext" />
+			<column name="FUNCTIONAL_SKILLS" type="longtext" />
+			<column name="CONTEXT" type="longtext" />
+			<column name="APPROCHE" type="longtext" />
+			<column name="METHODOLOGY" type="longtext" />
+			<column name="BENEFITS" type="longtext" />
+
+		</createTable>
+		
+		<createIndex indexName="idx_mission_title" tableName="T_MISSION" unique="true">
+			<column name="TITLE" />
+		</createIndex>
+
+		<addForeignKeyConstraint baseColumnNames="USER_ID" baseTableName="T_MISSION" constraintName="FK_M_USER_ID" referencedColumnNames="ID" referencedTableName="T_USER" />
+		<addForeignKeyConstraint baseColumnNames="CLIENT_ID" baseTableName="T_MISSION" constraintName="FK_M_CLIENT_ID" referencedColumnNames="ID" referencedTableName="T_CLIENT" />
+		<addForeignKeyConstraint baseColumnNames="PROJECT_ID" baseTableName="T_MISSION" constraintName="FK_M_PROJECT_ID" referencedColumnNames="ID" referencedTableName="T_PROJECT" />
+		<addForeignKeyConstraint baseColumnNames="FUNCTION_ID" baseTableName="T_MISSION" constraintName="FK_M_FUNCTION_ID" referencedColumnNames="ID" referencedTableName="T_FUNCTION" />
+		<addForeignKeyConstraint baseColumnNames="FUNCTION_TYPE_ID" baseTableName="T_MISSION" constraintName="FK_M_FUNCTION_TYPE_ID" referencedColumnNames="ID" referencedTableName="T_FUNCTION_TYPE" />
+		<addForeignKeyConstraint baseColumnNames="MISSION_TYPE_ID" baseTableName="T_MISSION" constraintName="FK_M_MISSION_TYPE_ID" referencedColumnNames="ID" referencedTableName="T_MISSION_TYPE" />
+
+		<loadData encoding="UTF-8" file="db/config/liquibase/data/missions.csv" separator=";" tableName="T_MISSION" />
+
+	</changeSet>
+
+</databaseChangeLog>

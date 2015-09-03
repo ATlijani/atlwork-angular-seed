@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+>
+
+	<changeSet id="00000000000001" author="ficheprojet">
+	
+		<createTable tableName="T_USER">
+			<column name="ID" type="bigint" autoIncrement="${autoIncrement}">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="LOGIN" type="varchar(100)">
+				<constraints unique="true" nullable="false" />
+			</column>
+			<column name="PASSWORD" type="varchar(100)" />
+			<column name="FIRST_NAME" type="varchar(256)" />
+			<column name="LAST_NAME" type="varchar(256)" />
+			<column name="EMAIL" type="varchar(256)">
+				<constraints unique="true" />
+			</column>
+			<column name="ACTIVATED" type="boolean" valueBoolean="false">
+				<constraints nullable="false" />
+			</column>
+			<column name="ACTIVATION_KEY" type="varchar(20)" />
+			<column name="RESET_KEY" type="varchar(20)" />
+			<column name="CREATED_DATE" type="timestamp" defaultValueDate="${now}">
+				<constraints nullable="false" />
+			</column>
+			<column name="RESET_DATE" type="timestamp">
+				<constraints nullable="true" />
+			</column>
+		</createTable>
+		
+		<createIndex indexName="idx_user_login" tableName="T_USER" unique="true">
+			<column name="LOGIN" />
+		</createIndex>
+		<createIndex indexName="idx_user_email" tableName="T_USER" unique="true">
+			<column name="EMAIL" />
+		</createIndex>
+		
+		<loadData encoding="UTF-8" file="db/config/liquibase/data/users.csv" separator=";" tableName="T_USER">
+			<column name="ACTIVATED" type="boolean" />
+			<column name="CREATED_DATE" type="timestamp" />
+		</loadData>
+		
+	</changeSet>
+</databaseChangeLog>
